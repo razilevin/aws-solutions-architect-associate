@@ -765,3 +765,127 @@ Scaling is the ability to increase or decrease the compute capacity of your appl
 ##### Sample Scaling Architecture Target-Tracking, SQS
 
 ![SQS Auto Scaling - Target Tracking](https://docs.aws.amazon.com/autoscaling/ec2/userguide/images/sqs-as-custom-metric-diagram.png)
+
+## Deployment Orchestration with AWS Elastic Beanstalk
+
+### What is AWS Elastic Beanstalk
+
+With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without having to learn about the infrastructure that runs those applications. Elastic Beanstalk reduces management complexity without restricting choice or control. You simply upload your application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring.
+
+Core Components
+
+#### Application
+
+An Elastic Beanstalk application is a logical collection of Elastic Beanstalk components, including environments, versions, and environment configurations. In Elastic Beanstalk an application is conceptually similar to a folder.
+
+#### Application Version
+
+In Elastic Beanstalk, an application version refers to a specific, labeled iteration of deployable code for a web application. An application version points to an Amazon Simple Storage Service (Amazon S3) object that contains the deployable code, such as a Java WAR file. An application version is part of an application. Applications can have many versions and each application version is unique. In a running environment, you can deploy any application version you already uploaded to the application, or you can upload and immediately deploy a new application version. You might upload multiple application versions to test differences between one version of your web application and another.
+
+#### Environment
+
+An environment is a collection of AWS resources running an application version. Each environment runs only one application version at a time, however, you can run the same application version or different application versions in many environments simultaneously. When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified.
+
+#### Environment Configurations
+
+An environment configuration identifies a collection of parameters and settings that define how an environment and its associated resources behave. When you update an environment’s configuration settings, Elastic Beanstalk automatically applies the changes to existing resources or deletes and deploys new resources (depending on the type of change).
+
+#### Environment Tier
+
+When you launch an Elastic Beanstalk environment, you first choose an environment tier. The environment tier designates the type of application that the environment runs, and determines what resources Elastic Beanstalk provisions to support it. An application that serves HTTP requests runs in a web server environment tier. An environment that pulls tasks from an Amazon Simple Queue Service (Amazon SQS) queue runs in a worker environment tier.
+
+#### Web Tier
+
+Receives HTTP Requests
+
+1. Route 53
+1. Elastic Load Balancer
+1. Auto Scaling
+1. EC2 Instance
+1. Security Groups
+1. Host Manager
+   1. To aid in the deployment of your application
+   1. Collating different metrics and different events from EC2 instance
+   1. Generating instance-level events
+   1. Monitoring both application and log files and the application server
+   1. Patch instance components
+   1. Manage log files allowing them to be published to S3
+
+#### Worker Tier
+
+Receives SQS Requests
+
+1. SQS Queue
+1. Auto Scaling
+1. IAM Service Role (Allows access to SQS)
+1. EC2 Instances
+1. Daemon (SQSD)
+
+Summary Image
+
+![Elastic BeanStalk Tiers](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-architecture_worker.png)
+
+#### Configuration Template
+
+A template that you can use as a starting point for creating unique environment configurations.
+
+#### Platform
+
+A platform is a combination of an operating system, programming language runtime, web server, application server, and Elastic Beanstalk components.
+
+#### Applications
+
+An application is a collection of different elements, such as environments, environment configurations, and application versions
+
+### Deployment Options
+
+#### Rolling Update
+
+With rolling deployments, Elastic Beanstalk splits the environment's EC2 instances into batches and deploys the new version of the application to one batch at a time, leaving the rest of the instances in the environment running the old version of the application. During a rolling deployment, some instances serve requests with the old version of the application, while instances in completed batches serve other requests with the new version.
+
+1. All at once (Default)
+   - Disables rolling deployments and always deploys to all instances
+1. Rolling
+   - Enables standard rolling deployments
+1. Rolling with additional batch
+   - Launches an extra batch of instances, before starting the deployment, to maintain full capacity
+1. Immutable
+   - Immutable update - Immutable environment updates ensure that configuration changes that require replacing instances are applied efficiently and safely.
+
+### Monitoring and Health Checks
+
+#### Basic Health
+
+1. High-level overview of Environment / 5 minute to CloudWatch
+1. Checks configuration / health of all services involved in **environment**
+   1. Route53 CNAME record points to ELB
+   1. Correct Security Groups to allow port 80 INBOUND traffic
+   1. SQS Queue being polled if worker tier
+
+Health Colors
+
+![Standard Health Colors](../assets/eb-standard-health-colors.png)
+
+#### Health Checks
+
+Web Tier
+
+Health checks are sent to the Auto Scaling Group which in turn sends to each individual EC2 instance.
+
+Worker Tier
+
+- EC2 instance check
+  - System Status Check
+    - Host Check
+      - Reboot instance to schedule VM on another host
+      - What if AMI is setup for On-Demand Host?
+  - Instance System Check
+    - Guest Check
+
+#### Enhanced Reporting
+
+Health Colors
+
+![Enhanced Health Colors](../assets/eb-enhanced-health-colors.png)
+
+Every EC2 instances have a health agent installed. The health agent captures additional information such as system metrics and at a faster rate than basic reporting sending metrics as custom metrics to CloudWatch.

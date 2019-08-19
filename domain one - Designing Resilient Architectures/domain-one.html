@@ -1,0 +1,1381 @@
+<!DOCTYPE html><html><head>
+      <title>domain-one</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/rl/.vscode-insiders/extensions/shd101wyy.markdown-preview-enhanced-0.4.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  font-family: 'Ubuntu';
+  font-size: 10pt;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="domain-one-designing-resilient-architectures">Domain One: Designing Resilient Architectures</h1>
+
+<ol>
+<li>Domain Requirement
+<ol>
+<li>Choose reliable/resilient storage</li>
+<li>Determine how to design decoupling mechanisms using AWS Services</li>
+<li>Determine how to design multi-tier architecture solution</li>
+<li>Determine how to design high availability and/or fault tolerant architectures</li>
+</ol>
+</li>
+</ol>
+<h2 class="mume-header" id="designing-for-disaster-recovery-business-continuity">Designing for Disaster Recovery / Business Continuity</h2>
+
+<h3 class="mume-header" id="disaster">Disaster</h3>
+
+<h4 class="mume-header" id="disaster-recovery-terminology">Disaster Recovery Terminology</h4>
+
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recovery Time Objective</td>
+<td>The time the system must by operational again</td>
+</tr>
+<tr>
+<td>Recovery Point Objective</td>
+<td>Acceptable amount of data loss represented as time</td>
+</tr>
+</tbody>
+</table>
+<p>RTO = 4 hour<br>
+RPO = 2 hours<br>
+System Down = 5:00 PM</p>
+<p>System would need to operating by 9:00 PM (DOWN START TIME + RTO) with a restore of all of 3:00PM (DOWN START TIME - RPO)</p>
+<h4 class="mume-header" id="disaster-recovery-fail-back-process">Disaster Recovery Fail Back Process</h4>
+
+<p>Reversing the flow of data replication so that any data updates received while the primary site was down can be replicated back without loss of data.</p>
+<h4 class="mume-header" id="back-up-restore-scenario">Back up / Restore Scenario</h4>
+
+<p><img src="../assets/backup-restore-dr.png" alt="Backup Scenario"></p>
+<h5 class="mume-header" id="back-up-restore-scenario-description">Back up / Restore Scenario Description</h5>
+
+<p>Backup data to S3 and restore data from S3.</p>
+<p><img src="../assets/backup-restore-dr-recovery.png" alt="Restore Scenario"></p>
+<ol>
+<li>Restore data from S3 bucket as virtual tape.</li>
+</ol>
+<h5 class="mume-header" id="backup-restore-considerations">Backup / Restore Considerations</h5>
+
+<ol>
+<li>Retention time</li>
+<li>Security of Archives</li>
+<li>Requires regular Disaster Recovery rehearsals</li>
+<li>Requires fixity testing of recovered S3 files</li>
+</ol>
+<h5 class="mume-header" id="disaster-recovery-fail-back-process-backup-restore">Disaster Recovery Fail Back Process - Backup / Restore</h5>
+
+<ol>
+<li>Freeze data changes to DR site.</li>
+<li>Take a backup</li>
+<li>Restore the backup to the primary site.</li>
+<li>Re-point users to primary site.</li>
+<li>Unfreeze changes</li>
+</ol>
+<h4 class="mume-header" id="pilot-light-scenario">Pilot Light Scenario</h4>
+
+<p><img src="../assets/pilot-light-dr.png" alt="Pilot Light"></p>
+<h5 class="mume-header" id="pilot-light-scenario-description">Pilot Light Scenario Description</h5>
+
+<p>Data is mirrored and the environment is scripted as a template which can be built out and scaled in the unlikely event of a disaster.</p>
+<h5 class="mume-header" id="pilot-light-scenario-considerations">Pilot Light Scenario Considerations</h5>
+
+<ol>
+<li>Regularly run these servers, test them and apply any software updates and configuration changes to ensure they match our production environment.</li>
+<li>Consider automating the provisioning of AWS services as much as possible with cloud formation.</li>
+</ol>
+<h5 class="mume-header" id="pilot-light-recovery">Pilot Light Recovery</h5>
+
+<p><img src="../assets/pilot-light-recovery-dr.png" alt="Pilot Light Recovery"></p>
+<ol>
+<li>Start our systems from AMIs on the appropriate instance types.</li>
+<li>Dynamic data servers resize them to handle production volumes as needed or add capacity accordingly.</li>
+</ol>
+<h5 class="mume-header" id="fail-back-process-pilot-light">Fail Back Process - Pilot Light</h5>
+
+<ol>
+<li>Establish reverse mirroring/replication from the DR site back to the primary site, once the primary site has caught up with the changes.</li>
+<li>Freeze data changes to DR site.</li>
+<li>Re-point users to the primary site.</li>
+<li>Unfreeze the changes.</li>
+</ol>
+<h4 class="mume-header" id="warm-stand-by-scenario">Warm Stand By Scenario</h4>
+
+<p><img src="../assets/warm-standby-dr.png" alt="Warm Stand By"></p>
+<h5 class="mume-header" id="warm-stand-by-description">Warm Stand By Description</h5>
+
+<p>All key services are running but not at expected scale.</p>
+<h5 class="mume-header" id="warm-stand-by-considerations">Warm Stand By Considerations</h5>
+
+<ol>
+<li>Patch and update software and configuration files in line with our live environment.</li>
+</ol>
+<h5 class="mume-header" id="warm-stand-by-recovery">Warm Stand By Recovery</h5>
+
+<p><img src="../assets/warm-standby-recovery-dr.png" alt="Warm Stand By Recovery"></p>
+<ol>
+<li>Environment will be scaled for production load.</li>
+<li>DNS records will be changed to point to disaster recovery infrastructure.</li>
+</ol>
+<h5 class="mume-header" id="fail-back-process-warm-stand-by">Fail Back Process -  Warm Stand By</h5>
+
+<ol>
+<li>Establish reverse mirroring/replication from the DR site back to the primary site, once the primary site has caught up with the changes.</li>
+<li>Freeze data changes to DR site.</li>
+<li>Re-point users to the primary site.</li>
+<li>Unfreeze the changes.</li>
+</ol>
+<h4 class="mume-header" id="multi-site-scenario">Multi-Site Scenario</h4>
+
+<p><img src="../assets/multi-site-dr.png" alt="Multi-Site"></p>
+<h5 class="mume-header" id="multi-site-description">Multi-Site Description</h5>
+
+<p>AWS environment duplicates production environment and DNS is used to route a subset of traffic to disaster recover site during normal operation. During normal data sources are in primary site during disaster recovery all functionality is contained within one site.</p>
+<h5 class="mume-header" id="multi-site-considerations">Multi-Site Considerations</h5>
+
+<p>Priority, recovery time and recovery point time are priorities and costs are not the main constraint.</p>
+<h5 class="mume-header" id="multi-site-recovery">Multi-Site Recovery</h5>
+
+<p>Traffic is cut over to the AWS infrastructure by updating the DNS record in Route 53.</p>
+<h5 class="mume-header" id="fail-back-process-multi-site">Fail Back Process - Multi-Site</h5>
+
+<ol>
+<li>Establish reverse mirroring/replication from the DR site back to the primary site, once the primary site has caught up with the changes.</li>
+<li>Freeze data changes to DR site.</li>
+<li>Re-point users to the primary site.</li>
+<li>Unfreeze the changes.</li>
+</ol>
+<p><img src="../assets/dr-chart.png" alt="Disaster Recovery Heat Chart"></p>
+<h4 class="mume-header" id="replication">Replication</h4>
+
+<h5 class="mume-header" id="replication-considerations">Replication Considerations</h5>
+
+<ol>
+<li>Distance between the sites</li>
+<li>Available bandwidth</li>
+<li>Data rate required by your application</li>
+<li>Replication Technology</li>
+</ol>
+<h5 class="mume-header" id="synchronous-replication">Synchronous Replication</h5>
+
+<p><img src="../assets/synchronous-replication.png" alt="Synchronous Replication"></p>
+<h5 class="mume-header" id="asynchronous-replication">Asynchronous Replication</h5>
+
+<p><img src="../assets/asynchronous-replication.png" alt="Asynchronous Replication"></p>
+<h4 class="mume-header" id="data-recovery-services">Data Recovery Services</h4>
+
+<h5 class="mume-header" id="aws-import-export">AWS Import Export</h5>
+
+<p>AWS import/export bypasses the internet and transfers your data directly onto and off of storage devices by means of high-speed internal networks at Amazon. For datasets of large size, AWS import/export is often faster than Internet transfer and more cost effective than upgrading your connectivity. And you can use AWS import/export to migrate data in and out of Amazon S3 buckets and Amazon Glacier Vaults or into Amazon EBS snapshots.</p>
+<p><img src="../assets/import-export.png" alt="Import Export"></p>
+<h5 class="mume-header" id="aws-storage-gateway">AWS Storage Gateway</h5>
+
+<p>AWS Storage Gateway is a service that connects an on-premise software appliance with cloud-based storage to provide seamless and highly secure integration between your on-premise IT environment and the storage infrastructure of AWS. AWS Storage Gateway supports three different configurations.</p>
+<ol>
+<li>Stored Volume Gateways</li>
+<li>Cached Volume Gateways</li>
+<li>VTL Gateways</li>
+</ol>
+<p><img src="../assets/storage-gateway.png" alt="Storage Gateway"></p>
+<h4 class="mume-header" id="disaster-recovery-summary">Disaster Recovery Summary</h4>
+
+<p><img src="../assets/dr-summary.png" alt="Disaster Recovery Summary"></p>
+<h2 class="mume-header" id="the-aws-well-architected-framework">The AWS Well Architected Framework</h2>
+
+<p><img src="../assets/well-architected-framework.png" alt="Well Architected Framework"></p>
+<p><img src="../assets/well-architected-framework-pillars.png" alt="Well Architected Framework Pillars"></p>
+<h3 class="mume-header" id="operational-excellence-pillar">Operational Excellence Pillar</h3>
+
+<p><img src="../assets/operational-excellence-pillar.png" alt="Operational Excellence Pillar"></p>
+<h3 class="mume-header" id="security-pillar">Security Pillar</h3>
+
+<p><img src="../assets/security-pillar.png" alt="Security Pillar"></p>
+<h3 class="mume-header" id="reliability-pillar">Reliability Pillar</h3>
+
+<p><img src="../assets/reliability-pillar.png" alt="Reliability Pillar"></p>
+<h3 class="mume-header" id="performance-efficiency-pillar">Performance Efficiency Pillar</h3>
+
+<p><img src="../assets/performance-efficiency-pillar.png" alt="Performance Efficiency Pillar"></p>
+<h3 class="mume-header" id="cost-optimization-pillar">Cost Optimization Pillar</h3>
+
+<p><img src="../assets/cost-optimization-pillar.png" alt="Cost Optimization Pillar"></p>
+<h2 class="mume-header" id="designing-solutions-for-elasticity-and-scalability">Designing Solutions for Elasticity and Scalability</h2>
+
+<h3 class="mume-header" id="regions-and-availability-zones">Regions And Availability Zones</h3>
+
+<ul>
+<li>Region -&gt; * Availability Zones -&gt; * Data Centers</li>
+<li>US East (N Virgina) -&gt; us-east-1[a-Z]</li>
+</ul>
+<h3 class="mume-header" id="naming-regions">Naming Regions</h3>
+
+<ol>
+<li>Friendly Names -&gt; US East (N Virgina)</li>
+<li>Code Name -&gt; us-east-1</li>
+</ol>
+<h3 class="mume-header" id="edge-locations">Edge Locations</h3>
+
+<p>CDN</p>
+<h3 class="mume-header" id="regional-edge-cache">Regional Edge Cache</h3>
+
+<p>Sits between edge locations and origin</p>
+<p><img src="../assets/edge-cache-arch.png" alt="Edge Cache Architecture"></p>
+<h2 class="mume-header" id="amazon-virtual-private-cloud">Amazon Virtual Private Cloud</h2>
+
+<p>VPN<br>
+<img src="../assets/vpc-general-vpn-cc.png" alt="VPN"></p>
+<h3 class="mume-header" id="important-facts">Important Facts</h3>
+
+<p>VPC Related LIMITS</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPC CIDR Block</td>
+<td>/16 -/28</td>
+</tr>
+<tr>
+<td>Subnet CIDR Block</td>
+<td>/16 - /28</td>
+</tr>
+<tr>
+<td>VPCs / Region</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Subnets / VPC</td>
+<td>200</td>
+</tr>
+<tr>
+<td>IPv4 CIDR blocks per VPC</td>
+<td>5</td>
+</tr>
+<tr>
+<td>NACLs / VPC</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Rules / NACL</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="internet-gateway">Internet Gateway</h3>
+
+<p>Internet Gateway<br>
+<img src="../assets/vpc-igw-ca.png" alt="Internet Gateway"></p>
+<h3 class="mume-header" id="direct-connect">Direct Connect</h3>
+
+<p><img src="https://docs.aws.amazon.com/directconnect/latest/UserGuide/images/direct_connect_overview.png" alt="Direct Connect"></p>
+<p><img src="../assets/vpc-direct-connect.png" alt="VPC Direct Connect"></p>
+<h3 class="mume-header" id="nacls-network-access-control-lists">NACL(s) Network Access Control Lists</h3>
+
+<ul>
+<li>Stateless (egress &amp; ingress) tables</li>
+<li>Default Action is DENY but default NACL is (ALLOW)</li>
+<li>Rules ordered by Rule Numbers (ASC)</li>
+<li>one -&gt; many (NACL -&gt; subnet), one -&gt; one (subnet -&gt; NACL)</li>
+<li>Operates @ subnet Level</li>
+</ul>
+<h3 class="mume-header" id="security-group">Security Group</h3>
+
+<ul>
+<li>Stateful (egress &amp; ingress) tables</li>
+<li>Operates @ instance level (Virtual Firewall) associated Network Interfaces.</li>
+<li>Can reference other Security Groups as sources</li>
+<li>DEFAULT is DENY traffic ingress and ALLOW traffic egress</li>
+<li>many -&gt; many (SG -&gt; NIC)</li>
+</ul>
+<h2 class="mume-header" id="elastic-lb">Elastic LB</h2>
+
+<ul>
+<li>ELB increase availability and fault tolerance of a system</li>
+<li>ELB can balance across many AZ</li>
+<li>ELB is a managed service</li>
+<li>ELB can be external or internal facing</li>
+<li>ELB does NOT STOP or START instances Autoscaling Service does that</li>
+<li>ELB monitor the health of instances and stops sending request to unhealthy instances</li>
+<li>ELB can support LB / Application Generated Cookie Stickiness</li>
+<li>ELB can do SSL Termination / Offloading</li>
+</ul>
+<h3 class="mume-header" id="elb-limits">ELB Limits</h3>
+
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LB / Region</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Target Groups / Region</td>
+<td>3000</td>
+</tr>
+<tr>
+<td>Listeners / LB</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Targets / LB</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="elb-api-model">ELB API Model</h3>
+
+<ol>
+<li>LB
+<ol>
+<li>Listener
+<ol>
+<li>Target Group (Health Check)
+<ol>
+<li>EC2</li>
+<li>IP
+<ol>
+<li>Use any IPv4 address from the LB VPC CIDR for targets within load balancers VPC
+<ol>
+<li>Peered VPC</li>
+<li>EC2-Classic</li>
+<li>Direct Connect</li>
+<li>VPN</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>ECS (Elastic Container Service)</li>
+<li>EKS (Elastic Kubernetes Service)</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="../assets/alb-model.png" alt="ELB API Model"></p>
+<h3 class="mume-header" id="metrics-access-logs-elb">Metrics &amp; Access Logs (ELB)</h3>
+
+<ul>
+<li>Measure Latency</li>
+</ul>
+<h3 class="mume-header" id="pricing">Pricing</h3>
+
+<p>Hourly Cost - $16.00 / Month</p>
+<p>LCU (LB Capacity Units) Bill on the MAX(Action)</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Limit</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New Connections</td>
+<td>25</td>
+<td>/ Second</td>
+</tr>
+<tr>
+<td>Active Connection</td>
+<td>3000</td>
+<td>At once</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>2.22</td>
+<td>Mbps</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>1 GB</td>
+<td>/ hour</td>
+</tr>
+<tr>
+<td>Rules Evaluation</td>
+<td>1000</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="load-balancing-and-az">Load Balancing And AZ</h3>
+
+<p>When you enable an Availability Zone for your load balancer, Elastic Load Balancing creates a load balancer node in the Availability Zone. If you register targets in an Availability Zone but do not enable the Availability Zone, these registered targets do not receive traffic.</p>
+<p>Example Load Balancing Across Multiple AZs<br>
+<img src="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/images/cross_zone_load_balancing_disabled.png" alt="Example Load Balancing Across Multiple AZs"></p>
+<h3 class="mume-header" id="cross-zone-load-balancing">Cross Zone Load Balancing</h3>
+
+<p>The nodes for your load balancer distribute requests from clients to registered targets. When cross-zone load balancing is enabled, each load balancer node distributes traffic across the registered targets in all enabled Availability Zones.</p>
+<p>Example Cross Zone Load Balancing<br>
+<img src="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/images/cross_zone_load_balancing_enabled.png" alt="Example Cross Zone Load Balancing"></p>
+<h3 class="mume-header" id="elb-types">ELB Types</h3>
+
+<h4 class="mume-header" id="classic-lb">Classic LB</h4>
+
+<p>Previous generation for HTTP, HTTPS, TCP</p>
+<h4 class="mume-header" id="network-lb-tcp-udp">Network LB (TCP / UDP)</h4>
+
+<ul>
+<li><strong>Layer 4 Traffic</strong></li>
+<li>Connection-based load balancing</li>
+<li>Incoming client connection bound to server</li>
+<li>Load Balancing TCP Traffic</li>
+<li>Makes a single IP Address available per AZ</li>
+<li>Built for performance</li>
+<li>Preserve Source IP Address</li>
+<li>EIP Support enable Static IP which is ideal for firewalls and zero billing use cases</li>
+<li>HyperPlane enabled therefore support 1,000,000+ of requests per sec</li>
+<li>Ideal for applications with long running connections</li>
+<li>Same model as Application LB</li>
+<li>Preserve source IP (Proxy Protocol V2)</li>
+</ul>
+<h5 class="mume-header" id="network-lb-traffic-and-capacity-metrics">Network LB  Traffic and Capacity Metrics</h5>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ActiveFlowCount</td>
+<td>Total # of concurrent TCP flows</td>
+</tr>
+<tr>
+<td>NewFlowCount</td>
+<td>Total number TCP flows established</td>
+</tr>
+<tr>
+<td>ProcessedBytes</td>
+<td>Total # of bytes processed</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="application-lb">Application LB</h4>
+
+<ul>
+<li><strong>Layer 7 Traffic</strong></li>
+<li>Host Based And Path Based Routing</li>
+<li>Connection terminated at the LB and pooled to the server</li>
+<li>ECS Integration</li>
+<li>SSL offloading</li>
+<li>SSL Termination</li>
+<li>WebSockets (Duplex Connection)</li>
+<li>HTTP/2</li>
+<li>LB deletion protection</li>
+<li>Redirects
+<ul>
+<li>HTTP - HTTP</li>
+<li>HTTP - HTTPS</li>
+<li>HTTPS - HTTPS</li>
+</ul>
+</li>
+<li>Fixed Response
+<ul>
+<li>Control which of the client requests should be served by the application fleet.</li>
+<li>LB can auto respond to HTTP request based on any criteria supported by content-based routing rules</li>
+<li>Configure response codes and custom error messages to be returned to the clients</li>
+</ul>
+</li>
+<li>X-Forwarded-For client IP address</li>
+</ul>
+<h5 class="mume-header" id="application-lb-content-based-routing">Application LB Content-based Routing</h5>
+
+<ol>
+<li>Route based on path or host field in the HTTP header</li>
+<li>Support multiple domains using a single load balancer</li>
+<li>Route each path or hostname to a different target group</li>
+</ol>
+<h5 class="mume-header" id="slow-start-disabled-by-default">Slow Start (DISABLED BY DEFAULT)</h5>
+
+<ul>
+<li>Add new targets without overwhelming them with a flood of requests</li>
+<li>LB linearly increases the number of requests sent to a new target</li>
+<li>Allows targets to warm before receiving their fair share of requests</li>
+<li>Useful for applications that depend on cache warming for optimal performance</li>
+</ul>
+<h5 class="mume-header" id="security">Security</h5>
+
+<h6 class="mume-header" id="legacy-tls">Legacy TLS</h6>
+
+<p><img src="../assets/alb-legacy-tls.png" alt="ALB Legacy TLS"></p>
+<h6 class="mume-header" id="alb-tls">ALB TLS</h6>
+
+<p><img src="../assets/alb-tls.png" alt="ALB TLS"></p>
+<h6 class="mume-header" id="alb-aws-certificate-manager-tls">ALB AWS Certificate Manager TLS</h6>
+
+<p><img src="../assets/alb-acm-tls.png" alt="ALB ACM"></p>
+<h6 class="mume-header" id="predefined-security-policies">Predefined Security Policies</h6>
+
+<p>Security Policy is a combination of protocols and ciphers. The protocol establishes a secure connection between a client and a server and ensures that all data passed between the client and your load balancer is private. A cipher is an encryption algorithm that uses encryption keys to create a coded message. Protocols use several ciphers to encrypt data over the internet.</p>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Supports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ELBSecurityPolicy-TLS-1-1-2017-01</td>
+<td>TLS 1.1</td>
+</tr>
+<tr>
+<td>ELBSecurityPolicy-TLS-1-2-2017-01</td>
+<td>TLS 1.2</td>
+</tr>
+<tr>
+<td>ELBSecurityPolicy-2016-08 - New Default Policy</td>
+<td>Classic LB default policy</td>
+</tr>
+<tr>
+<td>Windows XP Security Policy</td>
+<td></td>
+</tr>
+<tr>
+<td>ELBSecurityPolicy-FSA-2018-06</td>
+<td>Ciphers that ensure Forward secrecy</td>
+</tr>
+<tr>
+<td>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</td>
+<td>Strictly TLS 1.2</td>
+</tr>
+</tbody>
+</table>
+<h6 class="mume-header" id="application-lb-aws-waf">Application LB AWS WAF</h6>
+
+<p>Supports integration with Web application Firewall.</p>
+<h6 class="mume-header" id="server-name-indication-sni">Server Name Indication (SNI)</h6>
+
+<p>Server Name Indication (SNI) is an extension to the Transport Layer Security (TLS) computer networking protocol by which a client indicates which hostname it is attempting to connect to at the start of the handshaking process. This allows a server to present multiple certificates on the same IP address and TCP port number and hence allows multiple secure (HTTPS) websites (or any other service over TLS) to be served by the same IP address without requiring all those sites to use the same certificate. It is the conceptual equivalent to HTTP/1.1 name-based virtual hosting, but for HTTPS. The desired hostname is not encrypted in the original SNI extension, so an eavesdropper can see which site is being requested.</p>
+<ol>
+<li>Host multiple TLS secured applications, each with its own TLS certificate</li>
+<li>Bind multiple certificates to the same secure listener on your LB</li>
+<li>ALB will automatically choose the optimal TLS certificate for each client</li>
+<li>Supports ECDSA</li>
+</ol>
+<h6 class="mume-header" id="authentication-in-application-lb">Authentication in Application LB</h6>
+
+<ul>
+<li>Authenticate users accessing applications</li>
+<li>Native integration with any OIDC compliant IDPs</li>
+<li>Authenticate with Social Identities Integration with Amazon Cognito</li>
+<li>Authenticate with Enterprise IDPs with SAML</li>
+</ul>
+<h6 class="mume-header" id="netflix-authentication-application-lb-architecture">NetFlix Authentication Application LB Architecture</h6>
+
+<p><img src="../assets/alb-netflix.png" alt="ALB NetFlix Arch."></p>
+<h3 class="mume-header" id="aws-elastic-lb-decision-table">AWS Elastic LB Decision Table</h3>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Type Of ELB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Support Elastic IP</td>
+<td>Network LB</td>
+</tr>
+<tr>
+<td>SSL Cipher</td>
+<td>Classic LB</td>
+</tr>
+<tr>
+<td>Integrate ECS or container Services</td>
+<td>Network or Application LB</td>
+</tr>
+<tr>
+<td>SSL Offloading</td>
+<td>Application or Classic LB</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="amazon-elastic-cloud-compute">Amazon Elastic Cloud Compute</h2>
+
+<p><img src="../assets/ec2-high-level.png" alt="EC2 High Level"></p>
+<ol>
+<li>Select AMI</li>
+<li>Select Instance Type</li>
+<li>Launch Parameters</li>
+</ol>
+<h3 class="mume-header" id="amis">AMI(s)</h3>
+
+<ol>
+<li>AWS AMI(s)</li>
+<li>AWS Partner AMI(s)</li>
+<li>Community AMI(s)</li>
+<li>Snapshots of your custom VM(s)</li>
+</ol>
+<h3 class="mume-header" id="instance-type-size">Instance Type Size</h3>
+
+<ul>
+<li>nano</li>
+<li>micro</li>
+<li>small</li>
+<li>medium</li>
+<li>large</li>
+<li>xlarge</li>
+<li>(x)xlarge</li>
+</ul>
+<h3 class="mume-header" id="instance-type">Instance Type</h3>
+
+<ul>
+<li>General Purpose
+<ul>
+<li>Balance of compute, memory, and networking resources</li>
+</ul>
+</li>
+<li>Compute Optimized
+<ul>
+<li>Compute-bound applications that benefit from high-performance processors.</li>
+</ul>
+</li>
+<li>Memory Optimized
+<ul>
+<li>Designed to deliver fast performance for workloads that process large data sets in memory</li>
+</ul>
+</li>
+<li>Storage Optimized
+<ul>
+<li>Designed for workloads that require high, sequential read and write access to very large data sets on local storage.</li>
+</ul>
+</li>
+<li>Accelerated Computing
+<ul>
+<li>High processing capability, you&apos;ll benefit from using accelerated computing instances, which provide access to hardware-based compute accelerators such as Graphics Processing Units (GPUs) or Field Programmable Gate Arrays (FPGAs).</li>
+</ul>
+</li>
+<li>Elastic GPU
+<ul>
+<li>Attach low-cost graphics acceleration to a wide range of EC2 instances over the network</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="instance-type-attributes">Instance Type Attributes</h4>
+
+<ul>
+<li>vCPUs</li>
+<li>Memory</li>
+<li>Storage</li>
+<li>Network | Optimization</li>
+<li>EBS | Optimized</li>
+</ul>
+<h3 class="mume-header" id="ebs">EBS</h3>
+
+<p><img src="../assets/ec2-storage.png" alt="EC2 Instance Storage"></p>
+<h3 class="mume-header" id="storage-for-root-device">Storage for Root Device</h3>
+
+<ul>
+<li>&quot;Instance Store&quot; backed AMI.
+<ul>
+<li>Slow to start AMI</li>
+<li>Supports TERMINATED, RUNNING NOT STOPPED</li>
+<li>Ephemeral data is lost on STOPPED on REBOOT data is still available</li>
+<li>S3 Template Backed</li>
+<li>Attributes are fixed</li>
+</ul>
+</li>
+<li>&quot;EBS&quot; backed AMI
+<ul>
+<li>Fast to start</li>
+<li>Supports TERMINATE, REBOOT, STOP</li>
+<li>Ephemeral data is lost on TERMINATE</li>
+<li>While STOPPED instance type, kernel, RAM disk and user data can be changed</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="purchasing-option-request-spot-instances">Purchasing option - Request Spot instances</h3>
+
+<p>Allows us to buy excess capacity from AWS. Capacity guarantees are not bounded by any SLA.</p>
+<h3 class="mume-header" id="iam-roles">IAM Roles</h3>
+
+<p>IAM roles for EC2 automatically deploy and rotate the AWS credentials for you when you start that instance.</p>
+<h3 class="mume-header" id="user-data">User Data</h3>
+
+<p>Bootstrap scripts</p>
+<h3 class="mume-header" id="meta-data-url">Meta-data URL</h3>
+
+<hr>
+<p><a href="http://169.254.169.254/latest/meta-data">http://169.254.169.254/latest/meta-data</a></p>
+<hr>
+<h3 class="mume-header" id="delete-on-terminate-ebs-volume">Delete on Terminate EBS - Volume</h3>
+
+<p>If false EBS will survive instance TERMINATION.</p>
+<h3 class="mume-header" id="ec2-pricing">EC2 Pricing</h3>
+
+<p>Great site to compare instance types and AMI <a href="https://ec2instances.info">https://ec2instances.info</a></p>
+<ul>
+<li>Billing Types
+<ul>
+<li>On-Demand Instances - Pay as you go</li>
+<li>Spot Instances - Purchasing excess capacity from AWS</li>
+<li>Reserved Instances  - Upfront Commitment</li>
+<li>Scheduled Reserved Instances - Scheduled with Upfront Commitment</li>
+</ul>
+</li>
+</ul>
+<p>Pricing is determined per instance type and AMI.</p>
+<p>EC2 usage are billed on one second increments, with a minimum of 60 seconds. Similarly, provisioned storage for EBS volumes will be billed per-second increments, with a 60 second minimum. Per-second billing is available for instances launched in:</p>
+<ol>
+<li>On-Demand, Reserved and Spot forms</li>
+<li>All regions and Availability Zones</li>
+<li>Amazon Linux and Ubuntu</li>
+</ol>
+<h3 class="mume-header" id="ec2-stop-reboot-terminate">EC2 STOP, REBOOT, TERMINATE</h3>
+
+<p>The key is that a reboot keeps the instance on the same host therefore a new public IP but the same private IP.</p>
+<p><img src="../assets/stop-reboot-terminate-ec2.png" alt="Stop Reboot Terminate"></p>
+<h3 class="mume-header" id="instance-recovery">Instance Recovery</h3>
+
+<p>Create an Amazon CloudWatch alarm that monitors an Amazon EC2 instance and automatically recovers the instance if it becomes impaired due to an underlying hardware failure or a problem that requires AWS involvement to repair. <strong>Terminated instances cannot be recovered</strong>. A recovered instance is identical to the original instance, including the instance ID, private IP addresses, Elastic IP addresses, and all instance metadata. If the impaired instance is in a placement group, the recovered instance runs in the placement group.</p>
+<p>When the <strong>StatusCheckFailed_System</strong> alarm is triggered, and the recover action is initiated, you will be notified by the Amazon SNS topic that you selected when you created the alarm and associated the recover action. During instance recovery, the instance is migrated during an instance reboot, and any data that is in-memory is lost. When the process is complete, information is published to the SNS topic you&apos;ve configured for the alarm. Anyone who is subscribed to this SNS topic will receive an email notification that includes the status of the recovery attempt and any further instructions.</p>
+<h3 class="mume-header" id="placement-group">Placement Group</h3>
+
+<p>Logical grouping of instances to improve performance</p>
+<p>Cluster (Low latency, high network throughput)<br>
+<img src="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/placement-group-cluster.png" alt="Cluster"></p>
+<p>Spread (Distinct Racks - with own power and network)<br>
+<img src="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/placement-group-partition.png" alt="Spread"></p>
+<p>Partition (Reduces likelihood of correlated hardware failures)<br>
+<img src="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/placement-group-spread.png" alt="Partition"></p>
+<h3 class="mume-header" id="systems-resource-manager">Systems Resource Manager</h3>
+
+<p><img src="https://docs.aws.amazon.com/systems-manager/latest/userguide/images/how-it-works.png" alt="Systems Manager High Level"></p>
+<h2 class="mume-header" id="elastic-ip-address-eip">Elastic IP Address (EIP)</h2>
+
+<ul>
+<li>EIP associated to AWS account</li>
+<li>EIP associated to network interface or instance</li>
+<li>Charged for use when EIP not associated to running instance</li>
+<li>Limit 5 EIP / REgion</li>
+<li>EIP specific to a region</li>
+</ul>
+<h2 class="mume-header" id="simple-queue-service">Simple Queue Service</h2>
+
+<ul>
+<li>Fast, reliable, scalable message queue service</li>
+<li>Unlimited number of messages</li>
+<li>Messages can be encrypted using SSE / KMS</li>
+<li>SQS is PCI DSS Level 1 certified</li>
+</ul>
+<h3 class="mume-header" id="defaults">Defaults</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default Visibility Timeout</td>
+<td>30 seconds</td>
+</tr>
+<tr>
+<td>Message Retention Period</td>
+<td>4 days</td>
+</tr>
+<tr>
+<td>Maximum Message Size</td>
+<td>256 KB</td>
+</tr>
+</tbody>
+</table>
+<h3 class="mume-header" id="standard-queue">Standard Queue</h3>
+
+<ul>
+<li>Unlimited Throughput</li>
+<li>At least-Once Delivery</li>
+<li>Best-Effort Ordering</li>
+</ul>
+<h3 class="mume-header" id="fifo-queue">FIFO Queue</h3>
+
+<ul>
+<li>High Throughput</li>
+<li>Exactly-Once Processing</li>
+<li>First-In-First-Out Delivery</li>
+</ul>
+<h3 class="mume-header" id="delay-queue">Delay Queue</h3>
+
+<p>Delay queues let you postpone the delivery of new messages to a queue for a number of seconds. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period. The default (minimum) delay for a queue is 0 seconds.</p>
+<h4 class="mume-header" id="visibility-timeout">Visibility Timeout</h4>
+
+<p>Immediately after a message is received, it remains in the queue. To prevent other consumers from processing the message again, Amazon SQS sets a visibility timeout, a period of time during which Amazon SQS prevents other consumers from receiving and processing the message. The default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours.</p>
+<h4 class="mume-header" id="difference-between-visibility-timeout-and-delay-queue">Difference Between Visibility Timeout and Delay Queue</h4>
+
+<p><img src="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/images/sqs-delay-queues-diagram.png" alt="Difference Between Visibility Timeout and Delay Queue"></p>
+<h4 class="mume-header" id="message-retention-period">Message Retention Period</h4>
+
+<p>The amount of time based on the messages are kept in the queue before being deleted. A message is retained for 4 days. The minimum is 60 seconds (1 minute). The maximum is 1,209,600 seconds (14 days).</p>
+<h4 class="mume-header" id="inflight-messages-per-queue">Inflight messages Per Queue</h4>
+
+<p>For most standard queues (depending on queue traffic and message backlog), there can be a maximum of approximately 120,000 inflight messages (received from a queue by a consumer, but not yet deleted from the queue).</p>
+<p>For FIFO queues, there can be a maximum of 20,000 inflight messages (received from a queue by a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS returns no error messages.</p>
+<h2 class="mume-header" id="amazon-route-53">Amazon Route 53</h2>
+
+<p>Highly Available Domain Name System</p>
+<ul>
+<li>Geographical Routing</li>
+<li>DNS Fail-over</li>
+<li>Weighted Routing (Blue/Green Deployments)</li>
+<li>Route 53 allows fail-over of ELB(s) to use multiple regions</li>
+<li>Private EC2 DNS</li>
+<li>Route 53 Zones</li>
+</ul>
+<h2 class="mume-header" id="amazon-cloudwatch">Amazon CloudWatch</h2>
+
+<p>Provides a means of monitoring your resources via a series of metrics which are individual to each service. Allows you to quickly react to events and dynamically adjust and availability or scalability issue.</p>
+<h3 class="mume-header" id="concepts">Concepts</h3>
+
+<ol>
+<li>Metrics: Time-ordered set of data points</li>
+<li>Namespaces: Containers for metrics</li>
+<li>Alarms:  An alarm watches a single metric over a specified time period, and performs one or more specified actions, based on the value of the metric relative to a threshold over time.</li>
+</ol>
+<h3 class="mume-header" id="monitoring-modes">Monitoring Modes</h3>
+
+<ol>
+<li>Basic Monitoring (Every 5 minutes)</li>
+<li>Detailed Monitoring (Every 1 minute) Additional Cost associated.</li>
+<li>Metrics are maintained for 2 weeks.</li>
+</ol>
+<h3 class="mume-header" id="alarm-states">Alarm States</h3>
+
+<ol>
+<li>OK (Inside threshold level)</li>
+<li>Alarm (Outside of threshold level)</li>
+<li>Insufficient data</li>
+</ol>
+<h3 class="mume-header" id="actions">Actions</h3>
+
+<ol>
+<li>SNS topic</li>
+<li>EC2 Actions - Stop, Terminate, Reboot, Recover</li>
+</ol>
+<p>CloudWatch logging - CloudWatch can be used as a log aggregator.</p>
+<h3 class="mume-header" id="cloudwatch-agent">CloudWatch Agent</h3>
+
+<ol>
+<li>Collect more system-level metrics from Amazon EC2 instances across operating systems.</li>
+<li>Collect system-level metrics from on-premises servers.</li>
+<li>Retrieve custom metrics from your applications or services using the StatsD and collectd protocols.</li>
+<li>Collect logs from Amazon EC2 instances and on-premises servers, running either Linux or Windows Server.</li>
+</ol>
+<h2 class="mume-header" id="auto-scaling">Auto Scaling</h2>
+
+<p>Auto Scaling is a core component of increasing durability and availability on AWS. Auto Scaling enables you to provision based on actual demand rather than on estimated demand. Auto Scaling has health checking built-in and it can drop EC2 instances that are not responding and replace them newly spun up healthy versions. All of this functionality works across multiple availability zones within a region, helping you achieve high availability with minimal manual intervention</p>
+<h3 class="mume-header" id="auto-scaling-components">Auto Scaling Components</h3>
+
+<h4 class="mume-header" id="launch-template">Launch Template</h4>
+
+<p>A launch template is similar to a launch configuration, in that it specifies instance configuration information. Included are the ID of the Amazon Machine Image (AMI), the instance type, a key pair, security groups, and the other parameters that you use to launch EC2 instances. However, defining a launch template instead of a launch configuration allows you to have multiple versions of a template.</p>
+<h4 class="mume-header" id="launch-configuration">Launch Configuration</h4>
+
+<p>A launch configuration is an instance configuration template that an Auto Scaling group uses to launch EC2 instances.</p>
+<h4 class="mume-header" id="auto-scaling-group">Auto Scaling Group</h4>
+
+<p>An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. An Auto Scaling group also enables you to use Amazon EC2 Auto Scaling features such as health check replacements and scaling policies.</p>
+<p><img src="https://docs.aws.amazon.com/autoscaling/ec2/userguide/images/as-basic-diagram.png" alt="Auto Scaling Group"></p>
+<ul>
+<li>Instance Types Supported
+<ul>
+<li>On-Demand</li>
+<li>Spot Instances</li>
+</ul>
+</li>
+<li>If multiple AZ(s) defined the desired capacity is distributed across AZ(s).</li>
+</ul>
+<h4 class="mume-header" id="scaling">Scaling</h4>
+
+<p>Scaling is the ability to increase or decrease the compute capacity of your application. Scaling starts with an event, or scaling action, which instructs an Auto Scaling group to either launch or terminate Amazon EC2 instances.</p>
+<h4 class="mume-header" id="scaling-options">Scaling Options</h4>
+
+<ul>
+<li>Maintain current instance levels at all times</li>
+<li>Manual scaling</li>
+<li>Scale based on schedule</li>
+<li>Scale based on demand
+<ul>
+<li>Scaling policy types</li>
+<li>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target tracking</td>
+<td>Increase or decrease the current capacity of the group based on a target value for a specific metric</td>
+</tr>
+<tr>
+<td>Step</td>
+<td>Increase or decrease the current capacity of the group based on a set of scaling adjustments</td>
+</tr>
+<tr>
+<td>Simple</td>
+<td>Increase or decrease the current capacity of the group based on a single scaling adjustment</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>For an advanced scaling configuration, your Auto Scaling group can have more than one scaling policy.</li>
+<li>Amazon EC2 Auto Scaling chooses the policy that provides the largest capacity for both scale out and scale in</li>
+</ul>
+</li>
+<li>Scaling Cooldown Period
+<ul>
+<li>The cooldown period helps to ensure that your Auto Scaling group doesn&apos;t launch or terminate additional instances before the previous scaling activity takes effect.</li>
+</ul>
+</li>
+</ul>
+<h5 class="mume-header" id="auto-scaling-termination">Auto Scaling Termination</h5>
+
+<h6 class="mume-header" id="default-termination-policy">Default Termination Policy</h6>
+
+<ol>
+<li>Determine which AZ(s) have the most instances, and at least one instance that is not protected.</li>
+<li>Determine which instance to terminate so as to align the remaining instances to the allocation strategy for the On-Demand or Spot Instance that is terminating, your current selection of instance types, and distribution across your N lowest priced Spot pools</li>
+<li>Determine whether any of the instances use the oldest launch template. If there is one such instance, terminate it.</li>
+<li>Determine whether any of the instances use the oldest launch configuration. If there is one such instance, terminate it.</li>
+<li>After applying all of the criteria in 2 through 4, if there are multiple unprotected instances to terminate, determine which instances are closest to the next billing hour</li>
+</ol>
+<h6 class="mume-header" id="customizing-the-termination-policy">Customizing the Termination Policy</h6>
+
+<ol>
+<li>OldestInstance</li>
+<li>NewestInstance</li>
+<li>OldestLaunchConfiguration</li>
+<li>ClosetToNextInstanceHour</li>
+<li>OldestLaunchTemplate</li>
+<li>AllocationStrategy</li>
+</ol>
+<h5 class="mume-header" id="sample-scaling-architecture-target-tracking-sqs">Sample Scaling Architecture Target-Tracking, SQS</h5>
+
+<p><img src="https://docs.aws.amazon.com/autoscaling/ec2/userguide/images/sqs-as-custom-metric-diagram.png" alt="SQS Auto Scaling - Target Tracking"></p>
+<h2 class="mume-header" id="deployment-orchestration-with-aws-elastic-beanstalk">Deployment Orchestration with AWS Elastic Beanstalk</h2>
+
+<h3 class="mume-header" id="what-is-aws-elastic-beanstalk">What is AWS Elastic Beanstalk</h3>
+
+<p>With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without having to learn about the infrastructure that runs those applications. Elastic Beanstalk reduces management complexity without restricting choice or control. You simply upload your application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring.</p>
+<p>Core Components</p>
+<h4 class="mume-header" id="application">Application</h4>
+
+<p>An Elastic Beanstalk application is a logical collection of Elastic Beanstalk components, including environments, versions, and environment configurations. In Elastic Beanstalk an application is conceptually similar to a folder.</p>
+<h4 class="mume-header" id="application-version">Application Version</h4>
+
+<p>In Elastic Beanstalk, an application version refers to a specific, labeled iteration of deployable code for a web application. An application version points to an Amazon Simple Storage Service (Amazon S3) object that contains the deployable code, such as a Java WAR file. An application version is part of an application. Applications can have many versions and each application version is unique. In a running environment, you can deploy any application version you already uploaded to the application, or you can upload and immediately deploy a new application version. You might upload multiple application versions to test differences between one version of your web application and another.</p>
+<h4 class="mume-header" id="environment">Environment</h4>
+
+<p>An environment is a collection of AWS resources running an application version. Each environment runs only one application version at a time, however, you can run the same application version or different application versions in many environments simultaneously. When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified.</p>
+<h4 class="mume-header" id="environment-configurations">Environment Configurations</h4>
+
+<p>An environment configuration identifies a collection of parameters and settings that define how an environment and its associated resources behave. When you update an environment&#x2019;s configuration settings, Elastic Beanstalk automatically applies the changes to existing resources or deletes and deploys new resources (depending on the type of change).</p>
+<h4 class="mume-header" id="environment-tier">Environment Tier</h4>
+
+<p>When you launch an Elastic Beanstalk environment, you first choose an environment tier. The environment tier designates the type of application that the environment runs, and determines what resources Elastic Beanstalk provisions to support it. An application that serves HTTP requests runs in a web server environment tier. An environment that pulls tasks from an Amazon Simple Queue Service (Amazon SQS) queue runs in a worker environment tier.</p>
+<h4 class="mume-header" id="web-tier">Web Tier</h4>
+
+<p>Receives HTTP Requests</p>
+<ol>
+<li>Route 53</li>
+<li>Elastic Load Balancer</li>
+<li>Auto Scaling</li>
+<li>EC2 Instance</li>
+<li>Security Groups</li>
+<li>Host Manager
+<ol>
+<li>To aid in the deployment of your application</li>
+<li>Collating different metrics and different events from EC2 instance</li>
+<li>Generating instance-level events</li>
+<li>Monitoring both application and log files and the application server</li>
+<li>Patch instance components</li>
+<li>Manage log files allowing them to be published to S3</li>
+</ol>
+</li>
+</ol>
+<h4 class="mume-header" id="worker-tier">Worker Tier</h4>
+
+<p>Receives SQS Requests</p>
+<ol>
+<li>SQS Queue</li>
+<li>Auto Scaling</li>
+<li>IAM Service Role (Allows access to SQS)</li>
+<li>EC2 Instances</li>
+<li>Daemon (SQSD)</li>
+</ol>
+<p>Summary Image</p>
+<p><img src="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-architecture_worker.png" alt="Elastic BeanStalk Tiers"></p>
+<h4 class="mume-header" id="configuration-template">Configuration Template</h4>
+
+<p>A template that you can use as a starting point for creating unique environment configurations.</p>
+<h4 class="mume-header" id="platform">Platform</h4>
+
+<p>A platform is a combination of an operating system, programming language runtime, web server, application server, and Elastic Beanstalk components.</p>
+<h4 class="mume-header" id="applications">Applications</h4>
+
+<p>An application is a collection of different elements, such as environments, environment configurations, and application versions</p>
+<h3 class="mume-header" id="deployment-options">Deployment Options</h3>
+
+<h4 class="mume-header" id="rolling-update">Rolling Update</h4>
+
+<p>With rolling deployments, Elastic Beanstalk splits the environment&apos;s EC2 instances into batches and deploys the new version of the application to one batch at a time, leaving the rest of the instances in the environment running the old version of the application. During a rolling deployment, some instances serve requests with the old version of the application, while instances in completed batches serve other requests with the new version.</p>
+<ol>
+<li>All at once (Default)
+<ul>
+<li>Disables rolling deployments and always deploys to all instances</li>
+</ul>
+</li>
+<li>Rolling
+<ul>
+<li>Enables standard rolling deployments</li>
+</ul>
+</li>
+<li>Rolling with additional batch
+<ul>
+<li>Launches an extra batch of instances, before starting the deployment, to maintain full capacity</li>
+</ul>
+</li>
+<li>Immutable
+<ul>
+<li>Immutable update - Immutable environment updates ensure that configuration changes that require replacing instances are applied efficiently and safely.</li>
+</ul>
+</li>
+</ol>
+<h3 class="mume-header" id="monitoring-and-health-checks">Monitoring and Health Checks</h3>
+
+<h4 class="mume-header" id="basic-health">Basic Health</h4>
+
+<ol>
+<li>High-level overview in 5 minute Intervals.</li>
+<li>Checks configuration / health of all services involved in <strong>environment</strong></li>
+</ol>
+<p>Health Colors</p>
+<p><img src="../assets/eb-standard-health-colors.png" alt="Standard Health Colors"></p>
+<h4 class="mume-header" id="health-checks">Health Checks</h4>
+
+<p>Web Tier</p>
+<p>Health checks are sent to the Auto Scaling Group which in turn sends to each individual EC2 instance.</p>
+<p>Worker Tier</p>
+<ul>
+<li>EC2 instance check
+<ul>
+<li>System Status Check
+<ul>
+<li>Host Check
+<ul>
+<li>Reboot instance to schedule VM on another host</li>
+<li>What if AMI is setup for On-Demand Host?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Instance System Check
+<ul>
+<li>Guest Check</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="enhanced-reporting">Enhanced Reporting</h4>
+
+<p>Health Colors</p>
+<p><img src="../assets/eb-enhanced-health-colors.png" alt="Enhanced Health Colors"></p>
+<p>Every EC2 instances have a health agent installed. The health agent captures additional information such as system metrics.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
